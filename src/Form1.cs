@@ -34,6 +34,7 @@ namespace src
         private void button1_Click(object sender, EventArgs e)
         {
             double x = Convert.ToDouble(textBox1);
+            double z;
             double y = Convert.ToDouble(textBox2);
 
             if (proverka1(x, y) == true)
