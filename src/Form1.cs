@@ -25,8 +25,31 @@ namespace src
             {
                 adr_file = openFileDialog1.FileName;
                 panel1.Visible = true;
+                Uri uri = new Uri(adr_file);
+                webBrowser1.Url = uri;
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double x = Convert.ToDouble(textBox1);
+            double y = Convert.ToDouble(textBox2);
+
+            if (proverka1(x, y) == true)
+                MessageBox.Show("входит в область");
+            else
+                MessageBox.Show("не входит в область");
+        }
+        public static bool proverka1(double x, double y)
+        {
+            if (x < -8 || y < -3 || y > 4 || x > 10)
+                return false;
+            if ((x >= -8 && x <= 10) && (y <= 0 && y >= -3))
+                return true;
+            if ((x >= -4) && (x <= 4) && (y >= -3 && y <= 4))
+                return true;
+            else return false;
         }
     }
 }
