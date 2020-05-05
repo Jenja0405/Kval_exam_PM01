@@ -10,11 +10,22 @@ using System.Windows.Forms;
 
 namespace src
 {
-    public partial class Form1 : Form
+    public partial class FormGlavnaja : Form
     {
-        public Form1()
+        public static string adr_file;
+        public FormGlavnaja()
         {
-            InitializeComponent();
+            InitializeComponent()
+    }
+
+        private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult rez = openFileDialog1.ShowDialog();
+            if (rez == DialogResult.OK)
+            {
+                adr_file = openFileDialog1.FileName;
+
+            }
         }
     }
 }
